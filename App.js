@@ -1,4 +1,4 @@
-import {View, Text, TextInput} from 'react-native';
+import {View, Text, TextInput, Button, Alert} from 'react-native';
 import Logo from './components/Logo';
 import React, {useState} from 'react';
 
@@ -7,6 +7,9 @@ export default function App() {
 const [fname, setFname] = useState("Joe");
 const [lname, setLname] = useState("Bloggs");
 const [dob, setDob] = useState("22 August 1990");
+function buttonClicked() {
+    Alert.alert("button clicked");
+}
   return (
     <View>
       
@@ -14,9 +17,9 @@ const [dob, setDob] = useState("22 August 1990");
       <TextInput placeholder="Enter your lastname" onChangeText={(val) => setLname(val)}/>
       <TextInput placeholder="Enter your date of birth" onChangeText={(val) => setDob(val)}/>
       <Text>Hello {fname} {lname}. You were born on {dob}</Text>
+      <Button title="SUBMIT" onPress={buttonClicked}/>
       <Logo/>
       </View>
   )
 }
-
 
